@@ -1,0 +1,29 @@
+/*dégradé bouton*/
+@mixin gradient-color {
+    background-image: linear-gradient($color-secondary, $color-primary);
+}
+
+@mixin margerNone {
+    margin: 0px;
+}
+
+@mixin padding {
+    padding: 20px;
+}
+
+@mixin shadowbox {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*media queries / breakpoints */
+$breakpoints :(
+    "smartphone": 768px,
+    "tablet": 1024px,
+    "desktop": 1280px,
+);
+
+@mixin media-min ($_key) {
+    @media screen and (min-width: map-get($breakpoints, $_key)) {
+        &{ @content; }
+    }
+}
