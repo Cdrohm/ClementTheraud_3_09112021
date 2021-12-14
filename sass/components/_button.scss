@@ -1,0 +1,24 @@
+/*BOUTON*/
+.btn {
+    border: 0px;
+    border-radius: 50px;
+    padding: 15px 25px;
+    color: white;
+    background-color: #686868;
+    background-image: linear-gradient(0deg, $color-primary, $color-secondary);
+    cursor: pointer;
+    transition-duration: 0.25s;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 20px;
+    min-width: 180px;
+    width: max-content;
+    text-decoration: none;
+
+        &:hover {
+            box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.5);
+            background-color: #fff;
+            opacity: 0.80;   
+        }
+}

@@ -1,0 +1,186 @@
+/*PAGE ACCUEIL*/
+/*LOCALISATION*/
+.location {
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 20px 15px 15px 0px;
+    font-size: 15px;
+    position: relative;
+    z-index: -10;
+
+        &_Icon {
+            margin-right: 20px;
+        }
+        
+        &_Txt {
+            font-weight: bold;
+        }
+    }
+
+/*RESERVEZ*/
+.explore {
+    padding: 30px 30px 60px 30px;
+    text-align: center;
+    background-color: $color-backgrey;
+
+        &_txt {
+            color: $color-txt;
+            margin-bottom: 40px;
+        }
+}
+
+.reserve {
+    font-weight: 600;
+}
+
+/*FONCTIONNEMENT*/
+.function {
+    padding: 30px 15px;
+
+        &_title {
+            margin-top: 0px;
+        }
+
+        &_list {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            counter-reset: numberList;
+
+                @media (min-width:1024px) {
+                    display: flex;
+                    justify-content: space-around;
+            }
+        }
+
+        &_step {
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0px 30px 10px;
+            @include shadowbox; /*mixin*/
+            background-color: $color-backgrey;
+            position: relative;
+/*?*/           
+                &:hover {
+                    background-color: $color-primarypastel;
+                    
+                    .function_list_icon {
+                        color: $color-primary;
+                    }
+                }
+                    @media (min-width:1024px) {
+                        width: 25%;
+                    }             
+        }
+
+        &_step:before {
+            counter-increment: numberList 1;
+            content: counter(numberList);
+            left: -13px;
+            background: $color-primary;
+            width: 25px;
+            height: 25px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: absolute;
+        }
+
+        &_list_icon {
+            margin-right: 20px;
+            color: $color-icon;
+            padding-top: 2px;
+        }
+        
+        &_txt {
+            font-weight: bold;
+        }
+}
+
+/*RESTAURANTS*/
+.restaurants {
+    padding: 30px 20px;
+    background-color: $color-backgrey;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    column-gap: 30px;
+    row-gap: 20px;
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+     /*media*/
+        @media (min-width:1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            
+        } 
+}
+
+.place {
+    border-radius: 20px;
+    text-decoration: none;
+    color: unset;
+    display: block;
+    background-color: #fff;
+    position: relative;
+
+        &_img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 20px 20px 0px 0px;
+            box-shadow: none;
+        }
+
+        &_new {
+            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 80px;
+            background-color: $color-tertiary;
+            border-radius: 2px;
+            color: #008766;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+
+        &_footer {
+            padding: 15px 20px 20px;
+            position: relative;
+            display: flex;
+         /* flex-direction: column; */
+            align-items: center;
+            justify-content: flex-start;
+            border-radius: 0px 0px 20px 20px;
+            @include shadowbox;
+        }
+
+        &_footertxt {
+            flex: 1;
+        }
+
+        &_title {
+            margin: 0;
+        }
+
+        &_location {
+            margin: 0;
+        }
+
+        &_heart {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+}

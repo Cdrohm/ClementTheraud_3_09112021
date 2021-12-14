@@ -1,0 +1,167 @@
+/*PAGE RESTAURANT*/
+
+/*HEADER*/
+.restauContainer {
+    display: flex;
+    
+    align-items: center;
+}
+.restauImg {
+    object-fit: cover;
+    max-height: 250px;
+    width: 100%;  
+    max-width: 100%;
+}
+
+/*MENU*/
+.menuContainer {
+    border-radius: 35px 35px 0px 0px;
+    background-color: $color-backgrey;
+    margin-top: -60px;
+    position: relative;
+}
+.restau {
+
+        &_header{
+            border-radius: 35px 35px 0px 0px;
+            background-color: $color-backgrey;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 35px 0px 20px;
+        }    
+
+        &_title {
+            font-family: "Shrikhand", cursive;
+                @include margerNone;
+        }
+}
+
+.containerCards {
+    max-width: 768px; 
+    margin: auto;
+    position: relative;
+
+        @media (min-width:1224px) {
+            max-width: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 15px;
+    }
+}
+.menu{
+    padding-bottom: 10px;
+    &_header{
+        padding: 10px 10px 0 10px;
+        position: relative;
+        display: inline-block;
+
+        &::after{
+            position: absolute;
+            content: "";
+            display: block;
+            margin-top: 5px;
+            width: 50px;
+            height: 3px;
+            background-color: $color-tertiary;
+            bottom: 20px;
+            left: 20px;
+            /*ANIMATION*/
+            animation: progress 2s;
+            animation-fill-mode: both;
+            transform: scale(0);
+            -webkit-animation: progress 2s both;
+            
+        }
+    }
+
+    &_subtitle {
+        padding: 10px;
+        font-weight: 400;
+    }
+
+    &_cards{
+        margin: auto;
+        height: 70px;
+        width: 90%;
+        padding-left: 20px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        @include shadowbox;
+        cursor: pointer;
+        /*ANIMATION*/
+        animation: appear 1s cubic-bezier(.47,0,.36,.38) forwards;
+        -webkit-animation: appear 1s cubic-bezier(.47,0,.36,.38) forwards;
+        transform: scale(0);
+       /* animation-timing-function: cubic-bezier(.47,0,.36,.38) all ease-in;
+        animation-fill-mode: forwards;*/
+        
+
+        &_txt{
+            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &--over{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0 0 5px 0;
+            }
+        }
+
+        &_price{
+            margin-top: 20px;
+        }
+
+        &_check{
+            
+            height: 70px;
+            width: 70px;
+            opacity: 0;
+            background-color: $color-tertiary;
+            color: #fff;
+            margin-left: 25px;
+            margin-right: -70px;
+            border-radius: 0 10px 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*ANIMATION*/
+            transition: all 0.8s ease-in-out;
+        }
+
+        &:hover :nth-child(3) {
+            opacity: 1;
+            margin-right: 0px;
+
+        }
+        
+        &:hover .check_icons{ 
+            opacity: 1;
+            transform: rotate(360deg); 
+        }
+    }
+    
+}
+
+.check_icons{
+    color: white;
+    font-size: 20px;
+    /*ANIMATION*/
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.7s ease-in-out;
+}
+
+.command {
+    margin-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
